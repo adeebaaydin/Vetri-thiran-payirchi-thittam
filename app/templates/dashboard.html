@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+{% block title %}
+Dashboard · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-head">
+
+    <div>
+
+        <span class="eyebrow">
+            DASHBOARD
+        </span>
+
+        <h1>
+            Hello, {{ user.name }} 👋
+        </h1>
+
+        <p>
+            Choose a planner and turn your
+            budget into a practical starting plan.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="cards">
+
+    <article>
+
+        <div class="icon">
+            🏠
+        </div>
+
+        <h2>
+            Home Interior
+        </h2>
+
+        <p>
+            Rooms, furniture,
+            lighting and decor.
+        </p>
+
+        <a
+            class="btn"
+            href="/planner/home"
+        >
+            Start
+        </a>
+
+    </article>
+
+
+    <article>
+
+        <div class="icon">
+            🎉
+        </div>
+
+        <h2>
+            Party
+        </h2>
+
+        <p>
+            Guest count, event type,
+            venue and food.
+        </p>
+
+        <a
+            class="btn"
+            href="/planner/party"
+        >
+            Start
+        </a>
+
+    </article>
+
+
+    <article>
+
+        <div class="icon">
+            💎
+        </div>
+
+        <h2>
+            Jewelry
+        </h2>
+
+        <p>
+            Occasion, style,
+            outfit color and image.
+        </p>
+
+        <a
+            class="btn"
+            href="/planner/jewelry"
+        >
+            Start
+        </a>
+
+    </article>
+
+</section>
+
+
+{% if history %}
+
+<section>
+
+    <h2>
+        Recent plans
+    </h2>
+
+
+    <div class="history-list">
+
+        {% for item in history[:5] %}
+
+        <div class="history-item">
+
+            <strong>
+                {{ item.planner|title }}
+            </strong>
+
+            <span>
+                {{ item.created_at }}
+            </span>
+
+            <a href="/history">
+                View history
+            </a>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
+
+{% endblock %}

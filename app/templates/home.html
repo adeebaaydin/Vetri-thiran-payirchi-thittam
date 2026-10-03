@@ -1,0 +1,95 @@
+{% extends "planner_base.html" %}
+
+{% block title %}
+Home Planner
+{% endblock %}
+
+
+{% set eyebrow =
+"HOME INTERIOR PLANNER"
+%}
+
+{% set heading =
+"Design your space within budget"
+%}
+
+{% set description =
+"Allocate a practical budget across rooms, furniture, lighting, decor and storage."
+%}
+
+
+{% block fields %}
+
+
+<label>
+
+    Total budget (₹)
+
+    <input
+        name="budget"
+        type="number"
+        min="1"
+        step="1"
+        required
+    >
+
+</label>
+
+
+<label>
+
+    Rooms
+
+    <input
+        name="rooms"
+        placeholder="Living Room, Bedroom"
+        required
+    >
+
+</label>
+
+
+<label>
+
+    Style
+
+    <select name="style">
+
+        <option>
+            modern
+        </option>
+
+        <option>
+            minimal
+        </option>
+
+        <option>
+            traditional
+        </option>
+
+        <option>
+            boho
+        </option>
+
+        <option>
+            industrial
+        </option>
+
+    </select>
+
+</label>
+
+
+<label>
+
+    Notes
+
+    <textarea
+        name="notes"
+        placeholder="Example: need one dining table and two ceiling fans"
+    ></textarea>
+
+</label>
+
+
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends "planner_base.html" %}
+
+{% block title %}
+Jewelry Planner
+{% endblock %}
+
+
+{% set eyebrow =
+"JEWELRY BUDGET PLANNER"
+%}
+
+{% set heading =
+"Match jewelry to the occasion"
+%}
+
+{% set description =
+"Use budget, occasion, style and optional outfit imagery to generate coordinated ideas."
+%}
+
+
+{% block fields %}
+
+
+<label>
+
+    Budget (₹)
+
+    <input
+        name="budget"
+        type="number"
+        min="1"
+        required
+    >
+
+</label>
+
+
+<label>
+
+    Occasion
+
+    <select name="occasion">
+
+        <option>
+            wedding
+        </option>
+
+        <option>
+            festival
+        </option>
+
+        <option>
+            party
+        </option>
+
+        <option>
+            college event
+        </option>
+
+        <option>
+            formal
+        </option>
+
+    </select>
+
+</label>
+
+
+<label>
+
+    Style
+
+    <select name="style">
+
+        <option>
+            elegant
+        </option>
+
+        <option>
+            traditional
+        </option>
+
+        <option>
+            minimal
+        </option>
+
+        <option>
+            statement
+        </option>
+
+    </select>
+
+</label>
+
+
+<label>
+
+    Outfit color
+
+    <input
+        name="outfit_color"
+        placeholder="e.g. maroon"
+    >
+
+</label>
+
+
+<label>
+
+    Outfit image (optional)
+
+    <input
+        name="outfit_image"
+        type="file"
+        accept="image/png,image/jpeg,image/webp"
+    >
+
+</label>
+
+
+<label>
+
+    Notes
+
+    <textarea
+        name="notes"
+    ></textarea>
+
+</label>
+
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block title %}
+History · PocketSmart AI
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-head">
+
+    <span class="eyebrow">
+        SAVED PLANS
+    </span>
+
+    <h1>
+        Recommendation history
+    </h1>
+
+    <p>
+        Your previous planner requests
+        are stored locally in the project database.
+    </p>
+
+</section>
+
+
+{% if history %}
+
+<div class="history-list">
+
+    {% for item in history %}
+
+    <details class="history-item">
+
+        <summary>
+
+            <strong>
+                {{ item.planner|title }} planner
+            </strong>
+
+            ·
+
+            {{ item.created_at }}
+
+        </summary>
+
+
+        <pre>
+{{ item.response_json }}
+        </pre>
+
+    </details>
+
+    {% endfor %}
+
+</div>
+
+
+{% else %}
+
+<div class="empty">
+
+    No recommendations yet.
+
+</div>
+
+{% endif %}
+
+{% endblock %}

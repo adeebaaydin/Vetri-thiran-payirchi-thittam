@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<section class="planner">
+
+    <div class="page-head">
+
+        <span class="eyebrow">
+            {{ eyebrow }}
+        </span>
+
+        <h1>
+            {{ heading }}
+        </h1>
+
+        <p>
+            {{ description }}
+        </p>
+
+    </div>
+
+
+    <div class="planner-grid">
+
+
+        <form
+            id="planner-form"
+            class="form-card"
+            enctype="multipart/form-data"
+        >
+
+            {% block fields %}
+            {% endblock %}
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+                Generate recommendations
+            </button>
+
+        </form>
+
+
+        <section
+            id="results"
+            class="results"
+        >
+
+            <div class="empty">
+
+                Your AI plan will appear here.
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</section>
+
+{% endblock %}
